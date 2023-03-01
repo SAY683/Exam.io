@@ -1,0 +1,16 @@
+[package]
+name = "View"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+comfy-table = "*"#:Shll界面>
+anyhow = "*"#:Resultj兼容处理>
+async-trait = "*"#:async-trait>
+#bavy = "*"#:游戏引擎>
+opener = "*"#:默认开启>
+#dioxus = { version = "*", features = ["dioxus-core-macro", "dioxus-html", "desktop", "dioxus-web", "router"] }#:View
+Network = { path = "../Network" }
+Settings = { path = "../Settings" }

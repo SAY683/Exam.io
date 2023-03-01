@@ -1,0 +1,21 @@
+[package]
+name = "Settings"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+lazy_static = "*"#:惰性初始>
+once_cell = "*"#:|Cell模式全局数据>
+stretto = { version = "*", features = ["full"] }#:缓存>
+arc-swap = "*"#:原子锁>
+#sync_cow = "*"#:读写克隆>
+anyhow = "*"#:Result兼容处理>
+serde = { version = "*", features = ["derive"] }#:数据序列>
+serde_json = "*"#:json序列>
+quick-xml = { version = "*", features = ["serde", "async-tokio", "serialize", "serde-types","overlapped-lists"] }#:配置文件>
+serde_json_borrow = "*"#:json>
+toml = {version = "*", features = ["indexmap"]}#:toml>
+[lib]#[高可用库]
+path = "./src/main.rs"

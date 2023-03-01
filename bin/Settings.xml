@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Exam>
+    <!--数据-->
+    <data>
+        <!--日志-->
+        <logs>
+            <!--开启-->
+            <enabled>true</enabled>
+            <!--日志缓存清理日期-->
+            <expiration_day>7</expiration_day>
+        </logs>
+        <!--服务-->
+        <server>
+            <!--root节点-->
+            <root_node>/root</root_node>
+        </server>
+    </data>
+    <!--驱动-->
+    <drive>
+        <!--mysql连接-->
+        <mysql>
+            <!--名称-->
+            <name>root</name>
+            <!--密码-->
+            <password>683S@y683</password>
+            <!--IP端口-->
+            <host>localhost</host>
+            <!--存储数据库-->
+            <database>cabinet</database>
+        </mysql>
+        <!--redis连接-->
+        <redis>
+            <!--名称-->
+            <name/>
+            <!--密码-->
+            <password/>
+            <!--IP端口-->
+            <host>127.0.0.1:6379</host>
+            <!--存储数据库-->
+            <database/>
+        </redis>
+    </drive>
+</Exam>

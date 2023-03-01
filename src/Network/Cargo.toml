@@ -1,0 +1,36 @@
+[package]
+name = "Network"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+tokio = { version = "*", features = ["full"] }#:全域执行async/await>
+futures = "*"#:区域执行async/await>
+#crossbeam-utils = "*"#:原子并发>
+once_cell = "*"#:|Cell模式全局数据>
+arc-swap = "*"#:原子锁>
+bytes = "*"#:编码>
+serde = { version = "*", features = ["derive"] }#:数据序列>
+serde_json = "*"#:json序列>
+bincode = "*"#:结构编码>
+lazy_static = "*"#:惰性初始>
+anyhow = "*"#:Result兼容处理>
+#rayon = "*"#:并行>
+ssh-rs = "*"#:ssh>
+hashbrown = { version = "*", features = ["serde", "ahash", "rayon"] }#:|哈希(性能)>
+#kanal = "0.1.0-pre8"#:线程通信Bata>
+uuid = { version = "*", features = ["v4", "v8"] }#:ID
+#tarpc = { version = "*", features = ["tokio1", "tcp", "serde-transport"] }#:RPC>
+#async-graphql = { version = "*", features = ["tokio", "url", "uuid", "cbor", "hashbrown", "bson"] }#:请求机>
+#actix-cors = "*"#:WebA>
+#actix-web = { version = "*", features = ["secure-cookies", "actix-web-codegen"] }#:WebB>
+#actix-rt = { version = "*", features = ["actix-macros", "tokio-uring"] }#:WebC>
+reqwest = { version = "*", features = ["json", "socks", "stream", "blocking"] }#:http处理[单线程阻塞]>
+rocket = { version = "0.5.0-rc.2", features = ["secrets", "serde_json"] }#web:安全>
+mime = "*"#:邮件传输C>
+rand = "*"#:随机:>
+Settings = { path = "../Settings" }
+[lib]#[高可用库]
+path = "./src/main.rs"
