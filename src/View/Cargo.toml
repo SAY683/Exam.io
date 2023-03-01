@@ -14,3 +14,4 @@ opener = "*"#:默认开启>
 #dioxus = { version = "*", features = ["dioxus-core-macro", "dioxus-html", "desktop", "dioxus-web", "router"] }#:View
 Network = { path = "../Network" }
 Settings = { path = "../Settings" }
+reqwest = { version = "*", features = ["json", "socks", "stream", "blocking"] }#:http处理[单线程阻塞]>

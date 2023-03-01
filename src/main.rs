@@ -35,10 +35,12 @@ use std::future::Future;
 use std::pin::Pin;
 use std::sync::{Arc, Condvar, Mutex};
 use tokio::main;
+use View::{Colour, ViewDrive};
 
 #[main]
 pub async fn main() -> Result<()> {
     if ARGS_SUB.is_empty() {
+        println!("{}", Colour::Order.table(View::show::mandate()));
     } else {
         initialize().await?;
     }

@@ -46,6 +46,8 @@ pub struct Server {
 ///#驱动
 #[derive(Debug, Serialize, Deserialize, Clone, Default)]
 pub struct Drive {
+    //中文语言
+    pub zh: bool,
     //Mysql
     pub mysql: MysqlUlr,
     //Redis

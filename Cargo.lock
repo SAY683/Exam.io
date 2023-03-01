@@ -89,6 +89,7 @@ dependencies = [
  "async-trait",
  "comfy-table",
  "opener",
+ "reqwest",
 ]
 
 [[package]]
