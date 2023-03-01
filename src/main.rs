@@ -38,7 +38,10 @@ use tokio::main;
 
 #[main]
 pub async fn main() -> Result<()> {
-    initialize().await?;
+    if ARGS_SUB.is_empty() {
+    } else {
+        initialize().await?;
+    }
     Ok(())
 }
 ///# 主控制
