@@ -3,6 +3,7 @@
 pub mod ftp;
 pub mod tcp;
 pub mod udp;
+pub mod tls;
 
 use anyhow::Result;
 use lazy_static::lazy_static;
