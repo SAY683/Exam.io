@@ -31,6 +31,7 @@ reqwest = { version = "*", features = ["json", "socks", "stream", "blocking"] }#
 rocket = { version = "0.5.0-rc.2", features = ["secrets", "serde_json"] }#web:安全>
 mime = "*"#:邮件传输C>
 rand = "*"#:随机:>
+ftp-rs = { version = "*", features = ["tokio-rustls", "ftps"] }#:ftp>
 Settings = { path = "../Settings" }
 [lib]#[高可用库]
 path = "./src/main.rs"

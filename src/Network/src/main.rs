@@ -1,5 +1,6 @@
 #![feature(proc_macro_hygiene, decl_macro)]
 
+pub mod ftp;
 pub mod tcp;
 pub mod udp;
 

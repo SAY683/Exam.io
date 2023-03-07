@@ -100,6 +100,7 @@ uuid = { version = "*", features = ["v4", "v8"] }#:ID>
 #s2n-quic = { version = "*", features = ["hash_hasher"] }#QUIC>
 #tarpc = { version = "*", features = ["tokio1", "tcp", "serde-transport"] }#:RPC>
 #async-graphql = { version = "*", features = ["tokio", "url", "uuid", "cbor", "hashbrown", "bson"] }#:请求机>
+##ftp-rs = { version = "*", features = ["tokio-rustls", "ftps"] }#:ftp>
 #network<+>network<+>network<+>network<+>network<+>network<+>network<+>network<+>network<+>
 
 #Web<+>Web<+>Web<+>Web<+>Web<+>Web<+>Web<+>Web<+>Web<+>Web<+>Web<+>Web<+>Web<+>Web<+>Web<+>
