@@ -26,26 +26,37 @@ use crate::build::initialize;
 use crate::error::ThreadEvents;
 pub use crate::iterator::{Btree, Vector, Zeta};
 use anyhow::Result;
-pub use comfy_table::Table;
 use itertools::Itertools;
 use lazy_static::lazy_static;
 use once_cell::sync::Lazy;
+use spin::RwLock;
+use std::collections::BTreeSet;
 use std::env;
 use std::future::Future;
 use std::pin::Pin;
 use std::sync::{Arc, Condvar, Mutex};
 use tokio::main;
+use Attribute::command_registration;
+use Settings::INSTALL;
 use View::{Colour, ViewDrive};
 
 #[main]
 pub async fn main() -> Result<()> {
-    if ARGS_SUB.is_empty() {
-        println!("{}", Colour::Order.table(View::show::mandate()));
-    } else {
+    if !ARGS_SUB.is_empty() {
         initialize().await?;
+    } else {
+        println!(
+            "{}",
+            Colour::Order.table(View::show::mandate(INSTALL.drive.zh))
+        );
     }
     Ok(())
 }
+#[command_registration]
+pub fn ss() {}
+///# 指令集
+pub static INSTRUCTION_SET: Lazy<RwLock<BTreeSet<String>>> =
+    Lazy::new(|| RwLock::new(BTreeSet::new()));
 ///# 主控制
 pub static mut MAIN_PROC: Lazy<Subject> =
     Lazy::new(|| Arc::new((Mutex::new(false), Condvar::new())));

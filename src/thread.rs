@@ -116,23 +116,25 @@ pub trait Alexa<'life, NTD: Sized + Send + Sync> {
         let ert = Arc::new(SyncCow::new(vec![]));
         e.0.into_par_iter().for_each(|i| {
             let er = ert.clone();
-            let mut u = LocalPool::new();
-            u.spawner()
-                .spawn(async move {
-                    let o = i
-                        .await
-                        .unwrap_or_else(|x| {
-                            panic!("{x}");
-                        })
-                        .unwrap_or_else(|x| {
-                            panic!("{x}");
+            rayon::spawn(|| {
+                let mut u = LocalPool::new();
+                u.spawner()
+                    .spawn(async move {
+                        let o = i
+                            .await
+                            .unwrap_or_else(|x| {
+                                panic!("{x}");
+                            })
+                            .unwrap_or_else(|x| {
+                                panic!("{x}");
+                            });
+                        er.edit(|x| {
+                            x.push(o);
                         });
-                    er.edit(|x| {
-                        x.push(o);
-                    });
-                })
-                .unwrap();
-            u.run();
+                    })
+                    .unwrap();
+                u.run();
+            });
         });
         Ok(ert)
     }

@@ -86,14 +86,14 @@ ftlog = "*"#log(C)>
 #whoami = "*"#:环境ID>
 #dotenv = "*"#:环境解析>
 #sha256 = "*"#:文件hash>
-comfy-table = "*"#:Shll界面>
+#comfy-table = "*"#:Shll界面>
 #clap = "*"#:Shll命令解析>
 #sysinfo = "*"#:系统信息>
 #eventHandling<+>eventHandling<+>eventHandling<+>eventHandling<+>eventHandling<+>eventHandling<+>
 
 #network<+>network<+>network<+>network<+>network<+>network<+>network<+>network<+>network<+>
 uuid = { version = "*", features = ["v4", "v8"] }#:ID>
-ink = { version = "*", features = ["ink_metadata", "ink-debug"] }#:区块链>
+#text-translator = "*"#:翻译>
 #http = "*"#:请求处理>
 #ssh-rs = "*"#:ssh>
 #reqwest = { version = "*", features = ["json", "socks", "stream", "blocking"] }#:http处理[单线程阻塞]>
@@ -120,9 +120,10 @@ Network = { path = "./src/Network" }
 View = { path = "src/View" }
 Database = { path = "./src/Database" }
 Settings = { path = "./src/Settings" }
+Attribute = { path = "./src/Attribute" }
 #NativeLibrary<+>NativeLibrary<+>NativeLibrary<+>NativeLibrary<+>NativeLibrary<+>NativeLibrary<+>
 [workspace]#[集中构建]
-members = ["./src/Network", "src/View", "./src/Database", "./src/Settings"]
+members = ["./src/Network", "src/View", "./src/Database", "./src/Settings", "./src/Attribute"]
 [build-dependencies]#:[构建包]
 #cc = { version = "*", features = ["parallel"] }
 #slint-build = "*"

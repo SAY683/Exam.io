@@ -14,4 +14,7 @@ opener = "*"#:默认开启>
 #dioxus = { version = "*", features = ["dioxus-core-macro", "dioxus-html", "desktop", "dioxus-web", "router"] }#:View
 Network = { path = "../Network" }
 Settings = { path = "../Settings" }
-reqwest = { version = "*", features = ["json", "socks", "stream", "blocking"] }#:http处理[单线程阻塞]>
+futures = "*"#:区域执行async/await>
+#text-translator = "*"#:翻译>
+once_cell = "*"#:|Cell模式全局数据>
+arc-swap = "*"#:原子锁>

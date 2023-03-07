@@ -1,5 +1,8 @@
 #![feature(proc_macro_hygiene, decl_macro)]
 
+pub mod tcp;
+pub mod udp;
+
 use anyhow::Result;
 use lazy_static::lazy_static;
 use std::net::{SocketAddr, UdpSocket};
