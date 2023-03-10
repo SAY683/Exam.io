@@ -11,8 +11,10 @@
         </logs>
         <!--服务-->
         <server>
-            <!--root节点-->
-            <root_node>/root</root_node>
+            <!--根节点host名称-->
+            <host_controller_name>root</host_controller_name>
+            <!--计算节点host名称-->
+            <host_compute_name>seed</host_compute_name>
         </server>
     </data>
     <!--驱动-->

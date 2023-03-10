@@ -9,6 +9,7 @@ use std::env::current_dir;
 use std::path::PathBuf;
 
 pub fn main() -> Result<()> {
+    println!("{}", &INSTALL.data.server.host_controller_name);
     Ok(())
 }
 /// 设置
@@ -40,8 +41,10 @@ pub struct Logs {
 ///#web设置
 #[derive(Debug, Serialize, Deserialize, Clone, Default)]
 pub struct Server {
-    //root 节点
-    pub root_node: String,
+    //根节点节点
+    pub host_controller_name: String,
+    //计算节点
+    pub host_compute_name: String,
 }
 ///#驱动
 #[derive(Debug, Serialize, Deserialize, Clone, Default)]

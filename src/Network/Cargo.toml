@@ -32,7 +32,7 @@ rocket = { version = "0.5.0-rc.2", features = ["secrets", "serde_json"] }#web:�
 mime = "*"#:邮件传输C>
 rand = "*"#:随机:>
 Settings = { path = "../Settings" }
-suppaftp = { version = "*", features = ["async", "pin-project", "native-tls"] }#:ftp>
+#suppaftp = { version = "*", features = ["async", "pin-project", "native-tls"] }#:ftp>
 native-tls = { version = "*", features = ["alpn", "vendored"] }#:tls>
 [lib]#[高可用库]
 path = "./src/main.rs"
