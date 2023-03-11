@@ -86,6 +86,7 @@ ftlog = "*"#log(C)>
 #whoami = "*"#:环境ID>
 #dotenv = "*"#:环境解析>
 #sha256 = "*"#:文件hash>
+#ini = "*"#:文件启动>
 #comfy-table = "*"#:Shll界面>
 #clap = "*"#:Shll命令解析>
 #sysinfo = "*"#:系统信息>
@@ -123,9 +124,10 @@ View = { path = "src/View" }
 Database = { path = "./src/Database" }
 Settings = { path = "./src/Settings" }
 Attribute = { path = "./src/Attribute" }
+Open = { path = "./src/Open" }
 #NativeLibrary<+>NativeLibrary<+>NativeLibrary<+>NativeLibrary<+>NativeLibrary<+>NativeLibrary<+>
 [workspace]#[集中构建]
-members = ["./src/Network", "src/View", "./src/Database", "./src/Settings", "./src/Attribute"]
+members = ["./src/Network", "src/View", "./src/Database", "./src/Settings", "./src/Attribute", "./src/Open"]
 [build-dependencies]#:[构建包]
 #cc = { version = "*", features = ["parallel"] }
 #slint-build = "*"

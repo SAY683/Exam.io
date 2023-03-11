@@ -22,7 +22,9 @@ pub mod macros;
 pub mod build;
 pub mod error;
 
-use crate::build::initialize;
+#[cfg(target_os = "linux")]
+use crate::build::initialize_linux;
+use crate::build::initialize_windows;
 use crate::error::ThreadEvents;
 pub use crate::iterator::{Btree, Vector, Zeta};
 use anyhow::Result;
@@ -43,7 +45,10 @@ use View::{Colour, ViewDrive};
 #[main]
 pub async fn main() -> Result<()> {
     if !ARGS_SUB.is_empty() {
-        initialize().await?;
+        #[cfg(target_os = "windows")]
+        initialize_windows().await?;
+        #[cfg(target_os = "linux")]
+        initialize_linux().await?;
     } else {
         println!(
             "{}",
@@ -52,8 +57,7 @@ pub async fn main() -> Result<()> {
     }
     Ok(())
 }
-#[command_registration]
-pub fn ss() {}
+
 ///# 指令集
 pub static INSTRUCTION_SET: Lazy<RwLock<BTreeSet<String>>> =
     Lazy::new(|| RwLock::new(BTreeSet::new()));

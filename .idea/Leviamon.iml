@@ -11,6 +11,7 @@
       <sourceFolder url="file://$MODULE_DIR$/src/Settings/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/View/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/Attribute/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/Open/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
     </content>
     <orderEntry type="inheritedJdk" />
