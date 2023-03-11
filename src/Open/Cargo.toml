@@ -1,0 +1,32 @@
+[package]
+name = "Open"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+#async<+>async<+>async<+>async<+>async<+>async<+>async<+>async<+>async<+>
+tokio = { version = "*", features = ["full"] }#:全域执行async/await>
+futures = "*"#:区域执行async/await>
+async-channel = "*"#:线程通信>
+async-stream = "*"#:异步迭代>
+serde = { version = "*", features = ["derive"] }#:数据序列>
+itertools = "*"#:迭代器>
+lazy_static = "*"#:惰性初始>
+once_cell = "*"#:|Cell模式全局数据>
+arc-swap = "*"#:原子锁>
+sync_cow = "*"#:读写克隆>
+crossbeam-utils = "*"#:原子并发>
+hashbrown = { version = "*", features = ["serde", "ahash", "rayon"] }#:|哈希(性能)>
+spin = "*"#:|自旋锁>
+parking_lot = { version = "*", feature = ["const_fair_mutex", "const_mutex", "const_reentrant_mutex", "const_rwlock"] }#:数据锁>
+intrusive-collections = "*"#:聚合表>
+rayon = "*"#:并行>
+anyhow = "*"#:Result兼容处理>
+thiserror = "*"#:错误指定>
+fast_log = "*"#:log(B)>
+ftlog = "*"#log(C)>
+uuid = { version = "*", features = ["v4", "v8"] }#:ID>
+[lib]#[高可用库]
+path = "./src/main.rs"
