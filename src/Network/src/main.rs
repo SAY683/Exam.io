@@ -3,23 +3,24 @@
 pub mod ftp;
 pub mod tcp;
 pub mod tls;
-pub mod udp;
 
 use crate::tcp::TCPServer;
 use anyhow::Result;
+use async_trait::async_trait;
 use lazy_static::lazy_static;
 use spin::RwLock;
 use std::net::{SocketAddr, UdpSocket};
 use std::sync::{Arc, Mutex};
-use tokio::main;
+use tokio::io::{AsyncReadExt, AsyncWriteExt, BufReader, BufWriter};
+use tokio::net::tcp::{ReadHalf, WriteHalf};
 use tokio::net::TcpStream;
+use tokio::{main, spawn};
 use Open::{Beta, ProcessActive};
 /*
 测试main函数
  */
 #[main]
 pub async fn main() -> Result<()> {
-    //EE::tcp_server().await?;
     Ok(())
 }
 lazy_static! {

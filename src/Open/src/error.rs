@@ -1,11 +1,9 @@
-use arc_swap::Guard;
 use ftlog::error;
 use std::io;
-use std::sync::PoisonError;
 use thiserror::Error;
 use tokio::task::JoinError;
 
-///# 线程事件
+//# 线程事件
 #[derive(Debug, Error)]
 pub enum ThreadEvents {
     //未知错误

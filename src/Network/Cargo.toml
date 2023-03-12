@@ -6,6 +6,7 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+async-trait = "*"#:版本兼容>
 tokio = { version = "*", features = ["full"] }#:全域执行async/await>
 futures = "*"#:区域执行async/await>
 #crossbeam-utils = "*"#:原子并发>
@@ -22,7 +23,6 @@ ssh-rs = "*"#:ssh>
 hashbrown = { version = "*", features = ["serde", "ahash", "rayon"] }#:|哈希(性能)>
 kanal = "0.1.0-pre7"#:线程通信Bata>
 uuid = { version = "*", features = ["v4", "v8"] }#:ID
-#tarpc = { version = "*", features = ["tokio1", "tcp", "serde-transport"] }#:RPC>
 #async-graphql = { version = "*", features = ["tokio", "url", "uuid", "cbor", "hashbrown", "bson"] }#:请求机>
 #actix-cors = "*"#:WebA>
 #actix-web = { version = "*", features = ["secure-cookies", "actix-web-codegen"] }#:WebB>
